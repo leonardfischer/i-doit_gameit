@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<isys>
+	<queries>
+		<query>
+			<id>1</id>
+			<title>Create table: gameit</title>
+			<check ident="C_CREATE_TABLE">gameit</check>
+			<sql>
+				<exec ident="false">
+					CREATE TABLE IF NOT EXISTS `gameit` (
+					`gameit_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+					`gameit_points` int(10) unsigned NOT NULL,
+					`gameit_date` datetime DEFAULT NOW(),
+					`gameit_user_id` int(10) unsigned DEFAULT NULL,
+					PRIMARY KEY (`gameit_id`)
+					) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+					ALTER TABLE `gameit_id`
+					ADD CONSTRAINT `gameit_user_id` FOREIGN KEY (`gameit_user_id`) REFERENCES `isys_obj` (`isys_obj__id`) ON DELETE CASCADE ON UPDATE CASCADE;
+				</exec>
+			</sql>
+		</query>
+
+        <query>
+            <id>2</id>
+            <title>Create default rights</title>
+            <check ident="C_VALUE_EXISTS">SELECT isys_auth__id FROM isys_auth WHERE isys_auth__isys_module__id = (SELECT isys_module__id FROM isys_module WHERE isys_module__const = "C__MODULE__GAMEIT");</check>
+            <sql>
+                <exec ident="false">
+                    SET @MODULE = (SELECT isys_module__id FROM isys_module WHERE isys_module__const = "C__MODULE__FLOORPLAN");
+                    SET @ADMIN = (SELECT isys_obj__id FROM isys_obj WHERE isys_obj__const = "C__OBJ__PERSON_GROUP_ADMIN");
+                    SET @EDITOR = (SELECT isys_obj__id FROM isys_obj WHERE isys_obj__const = "C__OBJ__PERSON_GROUP_EDITOR");
+                    SET @AUTHOR = (SELECT isys_obj__id FROM isys_obj WHERE isys_obj__const = "C__OBJ__PERSON_GROUP_AUTHOR");
+                    SET @READER = (SELECT isys_obj__id FROM isys_obj WHERE isys_obj__const = "C__OBJ__PERSON_GROUP_READER");
+
+                    INSERT INTO isys_auth
+                    (isys_auth__isys_obj__id, isys_auth__type, isys_auth__isys_module__id, isys_auth__path, isys_auth__status) VALUES
+                    (@ADMIN, 1, @MODULE, 'GAME', 2),
+                    (@EDITOR, 1, @MODULE, 'GAME', 2),
+                    (@AUTHOR, 1, @MODULE, 'GAME', 2),
+                    (@READER, 1, @MODULE, 'GAME', 2);
+                </exec>
+            </sql>
+        </query>
+	</queries>
+</isys>

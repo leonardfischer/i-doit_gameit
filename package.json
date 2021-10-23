@@ -1,0 +1,54 @@
+{
+  "name": "LC__MODULE__GAMEIT",
+  "title": "Game IT",
+  "identifier": "lfischer_gameit",
+  "author": "Leonard Fischer",
+  "version": "1.0.1",
+  "description": "Gamification for i-doit",
+  "type": "addon",
+  "icon": "src/classes/modules/lfischer_gameit/assets/images/joystick.png",
+  "files": [
+    "init.php",
+    "install/update_data.xml",
+    "install",
+    "LICENSE",
+    "CHANGELOG",
+    "auth/isys_auth_lfischer_gameit.class.php",
+    "auth",
+    "README.md",
+    "lang/en.inc.php",
+    "lang/de.inc.php",
+    "lang",
+    "isys_module_lfischer_gameit.class.php",
+    "package.json",
+    "VERSION",
+    "templates/gamecenter.tpl",
+    "templates",
+    "isys_module_lfischer_gameit_autoload.class.php",
+    "assets/css/gameit.css",
+    "assets/css",
+    "assets/images/joystick.png",
+    "assets/images",
+    "assets",
+    "src/Controller/Main.php",
+    "src/Controller/Gamecenter.php",
+    "src/Controller",
+    "src/Model/Dao.php",
+    "src/Model",
+    "src/View/Gamecenter.php",
+    "src/View",
+    "src"
+  ],
+  "sql-tables": [
+    "gameit"
+  ],
+  "requirements": {
+    "core": ">= 1.16"
+  },
+  "dependencies": {
+    "php": [
+      "json",
+      "mysqli"
+    ]
+  }
+}

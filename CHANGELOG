@@ -1,0 +1,31 @@
+1.0.1
+--------------------------------------------------------------------------------
+[Fix]    Updated the add-on to work fine with current i-doit versions
+[Change] Moved the repository from bitbucket to github
+
+1.0
+--------------------------------------------------------------------------------
+[Change] Changed the identifier from `gameit` to `lfischer_gameit` according to synetics development partner requirements. This requires you to un- and reinstall the add-on in order to be able to update. Sadly your progress will be lost during this process.
+[Fix]    Fixed the add-on for the current i-doit version (1.13.2)
+
+0.5
+--------------------------------------------------------------------------------
+[Improvement] Possible bugfixes, compatibility and documentation
+
+0.4
+--------------------------------------------------------------------------------
+[Improvement] Improved the GUI
+
+0.3
+--------------------------------------------------------------------------------
+[Improvement] Code-Style update
+
+0.2
+--------------------------------------------------------------------------------
+[Improvement] Presentation of the "Top 10"
+[Improvement] Presentation of a graph for "Top 3"
+[Change]      Changed the point distribution
+
+0.1
+--------------------------------------------------------------------------------
+Initial Release

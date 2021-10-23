@@ -1,0 +1,10 @@
+.gameit-notify-yay {
+    background-image: linear-gradient(to bottom, #ffff00, #ff8800);
+    text-shadow: 1px 1px 0 #ffffff;
+}
+
+.gameit-notify-nay {
+    background-image: linear-gradient(to bottom, #ff0000, #aa0000);
+    color: #ffffff !important;
+    text-shadow: 1px 1px 0 #000000;
+}
